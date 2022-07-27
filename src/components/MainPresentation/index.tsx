@@ -16,7 +16,7 @@ export function MainPresentation() {
       <Flex
         maxWidth={1160}
         mx="auto"
-        h="calc(100vh - 244px)"
+        h="100vh"
         justify="center"
         flexDir="column"
         px="10"

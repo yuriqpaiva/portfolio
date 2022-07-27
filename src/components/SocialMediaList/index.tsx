@@ -21,7 +21,7 @@ export function SocialMediaList() {
       <Flex my="auto" flexDir="column" gap="4">
         <Box bg="white" w={9} h="0.1" />
         {socialMedias.map((media) => (
-          <SocialMediaItem data={media} />
+          <SocialMediaItem data={media} key={media.href} />
         ))}
         <Box bg="white" w={9} h="0.1" />
       </Flex>

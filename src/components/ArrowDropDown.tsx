@@ -12,7 +12,7 @@ const ChakraBox = chakra(motion.div, {
 
 export function ArrowDropDown() {
   return (
-    <Container display="flex" alignItems="center" justifyContent="center" mt={-10}>
+    <Container display="flex" alignItems="center" justifyContent="center" mt={-40}>
       <ChakraBox
         animate={{
           y: [20, 40],

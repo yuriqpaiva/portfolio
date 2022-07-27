@@ -1,5 +1,6 @@
 // import { Text } from '@chakra-ui/react';
 import { Box } from '@chakra-ui/react';
+import { About } from './components/About';
 import { ArrowDropDown } from './components/ArrowDropDown';
 import { Header } from './components/Header';
 import { MainPresentation } from './components/MainPresentation';
@@ -13,6 +14,7 @@ function App() {
       <Box as="main">
         <MainPresentation />
         <ArrowDropDown />
+        <About />
       </Box>
     </>
   );
