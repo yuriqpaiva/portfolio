@@ -14,6 +14,7 @@ export function Header() {
       <OrderedList display="flex" gap="10">
         {navItems.map((item, index) => (
           <ListItem
+            key={item}
             transition="color 0.2s ease-in-out"
             _hover={{ color: 'brandRed.500' }}
             fontFamily="Roboto Mono"
