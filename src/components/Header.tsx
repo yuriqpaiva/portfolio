@@ -1,5 +1,5 @@
 import {
-  Flex, OrderedList, ListItem, Icon,
+  Flex, OrderedList, ListItem, Icon, Box,
 } from '@chakra-ui/react';
 import { LogoIcon } from '../icons/Logo';
 
@@ -7,11 +7,15 @@ const navItems = ['About', 'Experience', 'Projects', 'Contact'];
 
 export function Header() {
   return (
-    <Flex as="nav" justify="space-between" p="10">
-      <Icon as={LogoIcon} />
+    <Flex as="nav" justify="space-between" py="10" px="14">
+      <Box as="a" href="/">
+        <Icon as={LogoIcon} />
+      </Box>
       <OrderedList display="flex" gap="10">
         {navItems.map((item, index) => (
           <ListItem
+            transition="color 0.2s ease-in-out"
+            _hover={{ color: 'brandRed.500' }}
             fontFamily="Roboto Mono"
             listStyleType="none"
             fontSize="14"
@@ -22,7 +26,9 @@ export function Header() {
             }}
             position="relative"
           >
-            {item}
+            <Box as="a" href="/">
+              {item}
+            </Box>
           </ListItem>
         ))}
       </OrderedList>
