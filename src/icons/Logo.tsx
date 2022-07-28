@@ -1,5 +1,4 @@
 import { Icon } from '@chakra-ui/react';
-import { useState } from 'react';
 
 export function LogoIcon() {
   return (

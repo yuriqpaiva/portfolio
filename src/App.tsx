@@ -17,6 +17,7 @@ function App() {
         justify="center"
         flexDir="column"
         alignItems="center"
+        maxWidth={1160}
       >
         <MainPresentation />
         <ArrowDropDown />

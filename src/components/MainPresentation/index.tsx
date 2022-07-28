@@ -13,6 +13,7 @@ export function MainPresentation() {
 
   return (
     <Flex
+      w="100%"
       visibility={showComponent ? 'visible' : 'hidden'}
       maxWidth={1160}
       h="100vh"
@@ -36,7 +37,7 @@ export function MainPresentation() {
       <Text fontSize="5rem" fontWeight="bold" as="h1">
         Yuri Paiva.
       </Text>
-      <Text fontSize="5rem" fontWeight="bold" opacity="0.8" as="span">
+      <Text fontSize="5rem" fontWeight="bold" opacity="0.8" as="h2">
         {'<Full-Stack Developer />'}
       </Text>
       <Text fontSize="1.25rem" as="h1" opacity="0.8" w={540} mt="8">

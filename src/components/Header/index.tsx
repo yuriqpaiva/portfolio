@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { LogoIcon } from '../../icons/Logo';
 import { NavItem } from './NavItem';
 
-const navItems = ['About', 'Experience', 'Projects', 'Contact'];
+const navItems = ['About Me', 'Experience', 'Projects', 'Contact'];
 
 export function Header() {
   const [hiddenHeader, setHiddenHeader] = useState(false);
