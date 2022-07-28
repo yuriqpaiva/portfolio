@@ -15,7 +15,6 @@ export function MainPresentation() {
     <Flex
       visibility={showComponent ? 'visible' : 'hidden'}
       maxWidth={1160}
-      mx="auto"
       h="100vh"
       justify="center"
       flexDir="column"
@@ -38,7 +37,7 @@ export function MainPresentation() {
         Yuri Paiva.
       </Text>
       <Text fontSize="5rem" fontWeight="bold" opacity="0.8" as="span">
-        {'<Front-End Developer />'}
+        {'<Full-Stack Developer />'}
       </Text>
       <Text fontSize="1.25rem" as="h1" opacity="0.8" w={540} mt="8">
         I&apos;m Passionate about

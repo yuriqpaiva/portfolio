@@ -1,5 +1,5 @@
 // import { Text } from '@chakra-ui/react';
-import { Box } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { About } from './components/About';
 import { ArrowDropDown } from './components/ArrowDropDown';
 import { Header } from './components/Header';
@@ -11,11 +11,17 @@ function App() {
     <>
       <Header />
       <SocialMediaList />
-      <Box as="main">
+      <Flex
+        as="main"
+        mx="auto"
+        justify="center"
+        flexDir="column"
+        alignItems="center"
+      >
         <MainPresentation />
         <ArrowDropDown />
         <About />
-      </Box>
+      </Flex>
     </>
   );
 }
