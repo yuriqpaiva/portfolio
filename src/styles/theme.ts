@@ -6,6 +6,16 @@ const customTheme = {
       body: {
         bg: 'brandBlue.900',
         color: '#ffffff',
+        '&::-webkit-scrollbar': {
+          width: '6px',
+        },
+        '&::-webkit-scrollbar-track': {
+          width: '6px',
+        },
+        '&::-webkit-scrollbar-thumb': {
+          background: 'gray.600',
+          borderRadius: '24px',
+        },
       },
     },
   },

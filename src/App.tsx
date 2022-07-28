@@ -1,4 +1,3 @@
-// import { Text } from '@chakra-ui/react';
 import { Flex } from '@chakra-ui/react';
 import { About } from './components/About';
 import { ArrowDropDown } from './components/ArrowDropDown';
@@ -18,6 +17,7 @@ function App() {
         flexDir="column"
         alignItems="center"
         maxWidth={1160}
+        overflowY="auto"
       >
         <MainPresentation />
         <ArrowDropDown />
