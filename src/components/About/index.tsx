@@ -1,12 +1,28 @@
 import {
-  Box, Flex, HStack, Icon, Stack, Text,
+  Box, Flex, HStack, Stack, Text,
 } from '@chakra-ui/react';
 import { Reveal } from 'react-awesome-reveal';
 import { keyframes } from '@emotion/react';
-import { JavaScriptIcon } from '../../icons/technologies/JavaScriptIcon';
-import { ReactIcon } from '../../icons/technologies/ReactIcon';
-import { NodeIcon } from '../../icons/technologies/NodeIcon';
-import { MongoIcon } from '../../icons/technologies/MongoIcon';
+import { gql, useQuery } from '@apollo/client';
+import { TechnologyItem } from './TechnologyItem';
+
+const GET_TECHNOLOGIES = gql`
+  query GetTechnologies {
+    technologies {
+      image_url
+      name
+      description
+    }
+  }
+`;
+
+interface GetTechnologiesResponse {
+  technologies: {
+    name: string;
+    description: string;
+    image_url: string;
+  }[];
+}
 
 const customAnimation = keyframes`
   from {
@@ -21,6 +37,8 @@ const customAnimation = keyframes`
 `;
 
 export function About() {
+  const { data } = useQuery<GetTechnologiesResponse>(GET_TECHNOLOGIES);
+
   return (
     <Box
       mt={80}
@@ -72,15 +90,24 @@ export function About() {
                 where the main focus is on build apps with performance,
                 accessibility and great SEO, using Agile methodology.
               </Text>
-              <Text opacity="0.8">
-                Technologies that I&apos;ve been recently working with:
-              </Text>
-              <HStack spacing="6">
-                <Icon as={JavaScriptIcon} color="brandRed.500" boxSize="12" />
-                <Icon as={ReactIcon} color="brandRed.500" boxSize="12" />
-                <Icon as={NodeIcon} color="brandRed.500" boxSize="12" />
-                <Icon as={MongoIcon} color="brandRed.500" boxSize="12" />
-              </HStack>
+              <Box>
+                <Text opacity="0.8">
+                  Technologies that I&apos;ve been recently working with:
+                </Text>
+                <Text as="span" color="brandRed.500" mb="8" display="block">
+                  (*hover over icons for more information)
+                </Text>
+                {data?.technologies && (
+                  <HStack spacing="12">
+                    {data?.technologies.map((technology) => (
+                      <TechnologyItem
+                        technology={technology}
+                        key={technology.name}
+                      />
+                    ))}
+                  </HStack>
+                )}
+              </Box>
             </Stack>
           </Flex>
         </Flex>
