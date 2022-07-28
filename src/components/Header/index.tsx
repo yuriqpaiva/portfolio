@@ -40,6 +40,7 @@ export function Header() {
       top={hiddenHeader ? -122 : 0}
       transition="all 0.5s"
       boxShadow={isSettingHidden ? '#E94560 0px 10px 20px -10px' : ''}
+      alignItems="center"
     >
       <Box as="a" href="/">
         <Icon as={LogoIcon} />
