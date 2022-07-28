@@ -6,7 +6,12 @@ import { useEffect, useState } from 'react';
 import { LogoIcon } from '../../icons/Logo';
 import { NavItem } from './NavItem';
 
-const navItems = ['About Me', 'Experience', 'Projects', 'Contact'];
+const navItems = [
+  { name: 'About Me', href: '/#about-me' },
+  { name: 'Experience', href: '/' },
+  { name: 'Projects', href: '/' },
+  { name: 'Contact', href: '/s' },
+];
 
 export function Header() {
   const [hiddenHeader, setHiddenHeader] = useState(false);
@@ -47,7 +52,7 @@ export function Header() {
       </Box>
       <OrderedList display="flex" gap="10">
         {navItems.map((item, index) => (
-          <NavItem item={item} index={index} key={item} />
+          <NavItem item={item} index={index} key={item.name} />
         ))}
       </OrderedList>
     </Flex>

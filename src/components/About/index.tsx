@@ -50,7 +50,12 @@ export function About() {
       keyframes={customAnimation}
       triggerOnce
     >
-      <Flex w="100%" flexDir="column">
+      <Flex
+        w="100%"
+        flexDir="column"
+        id="about-me"
+
+      >
         <Flex alignItems="center">
           <Text
             as="span"

@@ -4,7 +4,10 @@ import { motion } from 'framer-motion';
 
 interface NavItemProps {
   index: number;
-  item: string;
+  item: {
+    name: string;
+    href: string;
+  };
 }
 
 export function NavItem({ index, item }: NavItemProps) {
@@ -19,7 +22,6 @@ export function NavItem({ index, item }: NavItemProps) {
   if (showComponent) {
     return (
       <ListItem
-        key={item}
         _hover={{ color: 'brandRed.500' }}
         fontFamily="Roboto Mono"
         listStyleType="none"
@@ -35,8 +37,8 @@ export function NavItem({ index, item }: NavItemProps) {
         animate={{ opacity: 1, translateY: 0 }}
         transition="transform 1s ease-in-out, color 0.2s ease-in-out"
       >
-        <Box as="a" href="/">
-          {item}
+        <Box as="a" href={item.href}>
+          {item.name}
         </Box>
       </ListItem>
     );
