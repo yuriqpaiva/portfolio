@@ -40,10 +40,10 @@ export function MainPresentation() {
       <Text fontSize="5rem" fontWeight="bold" opacity="0.8" as="h2">
         {'<Full-Stack Developer />'}
       </Text>
-      <Text fontSize="1.25rem" as="h1" opacity="0.8" w={540} mt="8">
+      <Text fontSize="1.25rem" as="h1" w={540} mt="8" color="gray.300">
         I&apos;m Passionate about
         {' '}
-        <Text as="span" fontWeight="semibold" color="brandRed.500">
+        <Text as="strong" fontWeight="semibold" color="brandRed.500">
           Software Development
           {' '}
         </Text>

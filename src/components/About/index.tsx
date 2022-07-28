@@ -5,6 +5,7 @@ import { Reveal } from 'react-awesome-reveal';
 import { keyframes } from '@emotion/react';
 import { gql, useQuery } from '@apollo/client';
 import { TechnologyItem } from './TechnologyItem';
+import { UnderlineLink } from '../utils/UnderlineLink';
 
 const GET_TECHNOLOGIES = gql`
   query GetTechnologies {
@@ -75,26 +76,48 @@ export function About() {
         </Flex>
         <Flex>
           <Flex marginY="10" width="50%">
-            <Stack spacing="6" fontSize="1.125rem">
-              <Text opacity="0.8">
+            <Stack spacing="6" fontSize="1.125rem" color="gray.300">
+              <Text>
                 Hey! My name is Yuri and welcome to my portfolio. I&apos;m a
-                Full Stack Developer. I started programming since 2018 when I
-                had my first experience with Software Development in college,
-                since then, I started to get more and more interest in Web
-                Development, mastering and focusing in JavaScript Stack using
-                React, React Native and Back-End Node Frameworks like Express
-                and NestJS.
+                {' '}
+                <UnderlineLink href="https://www.w3schools.com/whatis/whatis_fullstack.asp#:~:text=A%20full%20stack%20web%20developer,ASP%2C%20Python%2C%20or%20Node)">
+                  Full Stack
+                </UnderlineLink>
+                Developer. I started programming since 2018 when I had my first
+                experience with Software Development in college, since then, I
+                started to get more and more interest in Web Development,
+                mastering and focusing in JavaScript Stack using
+                {' '}
+                <UnderlineLink href="https://reactjs.org/">
+                  React
+                </UnderlineLink>
+                ,
+                <UnderlineLink href="https://reactnative.dev/">
+                  React Native
+                </UnderlineLink>
+                and Back-End
+                {' '}
+                <UnderlineLink href="https://nodejs.org/en/">
+                  NodeJS
+                </UnderlineLink>
+                Frameworks like Express and NestJS.
               </Text>
-              <Text opacity="0.8">
+              <Text>
                 I&apos;m current working at a ticket sales start-up in Brazil
                 where the main focus is on build apps with performance,
                 accessibility and great SEO, using Agile methodology.
               </Text>
               <Box>
-                <Text opacity="0.8">
+                <Text>
                   Technologies that I&apos;ve been recently working with:
                 </Text>
-                <Text as="span" color="brandRed.500" mb="8" display="block">
+                <Text
+                  as="span"
+                  color="brandRed.500"
+                  mb="8"
+                  display="block"
+                  fontWeight="semibold"
+                >
                   (*hover over icons for more information)
                 </Text>
                 {data?.technologies && (
