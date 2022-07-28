@@ -18,6 +18,8 @@ function App() {
         alignItems="center"
         maxWidth={1160}
         overflowY="auto"
+        overflowX="hidden"
+
       >
         <MainPresentation />
         <ArrowDropDown />
