@@ -25,7 +25,7 @@ export function ExperienceItem({
       onClick={() => handleExperienceChange(experience.id)}
     >
       <Text
-        color={active ? 'brandRed.500' : 'white'}
+        color={active ? 'brandRed.500' : 'gray.400'}
         fontFamily="Roboto Mono"
         fontWeight="medium"
         fontSize="1rem"

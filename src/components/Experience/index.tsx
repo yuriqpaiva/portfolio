@@ -7,18 +7,17 @@ import { ExperienceList } from './ExperiencesList';
 import { formatDate } from '../../utils/functions/formatDate';
 
 const GET_EXPERIENCES = gql`
- query GetExperiences {
-  experiences(orderBy: startDate_DESC) {
-    id
-    place
-    office
-    duties
-    startDate
-    endDate
-    url
+  query GetExperiences {
+    experiences(orderBy: startDate_DESC) {
+      id
+      place
+      office
+      duties
+      startDate
+      endDate
+      url
+    }
   }
-}
-
 `;
 
 interface ExperienceData {
@@ -79,7 +78,9 @@ export function Experience() {
             selectedExperienceId={selectedExperienceId}
             onExperienceChange={handleExperienceChange}
           />
-          <ExperienceDetail experience={selectedExperience} />
+          <ExperienceDetail
+            experience={selectedExperience}
+          />
         </Flex>
       </Flex>
     );
