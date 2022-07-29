@@ -43,7 +43,7 @@ export function Header() {
       left={0}
       right={0}
       top={hiddenHeader ? -122 : 0}
-      transition="all 0.5s"
+      transition="all 0.3s"
       boxShadow={isSettingHidden ? '#E94560 0px 10px 20px -10px' : ''}
       alignItems="center"
     >
