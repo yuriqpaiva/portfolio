@@ -4,29 +4,35 @@ import { useCallback, useEffect, useState } from 'react';
 import { SectionTitle } from '../utils/SectionTitle';
 import { ExperienceDetail } from './ExperienceDetail';
 import { ExperienceList } from './ExperiencesList';
+import { formatDate } from '../../utils/functions/formatDate';
 
 const GET_EXPERIENCES = gql`
-  query GetExperiences {
-    experiences {
-      id
-      place
-      office
-      duties
-      startDate
-      endDate
-    }
+ query GetExperiences {
+  experiences(orderBy: startDate_DESC) {
+    id
+    place
+    office
+    duties
+    startDate
+    endDate
+    url
   }
+}
+
 `;
 
+interface ExperienceData {
+  id: string;
+  place: string;
+  office: string;
+  duties: string[];
+  startDate: string;
+  endDate: string | null;
+  url: string;
+}
+
 interface GetExperiencesResponse {
-  experiences: {
-    id: string;
-    place: string;
-    office: string;
-    duties: string[];
-    startDate: string;
-    endDate: string | null;
-  }[];
+  experiences: ExperienceData[];
 }
 
 export function Experience() {
@@ -35,7 +41,7 @@ export function Experience() {
   const [selectedExperienceId, setSelectedExperienceId] = useState(
     data?.experiences[0].id,
   );
-  const [selectedExperience, setSelectedExperience] = useState({} as any);
+  const [selectedExperience, setSelectedExperience] = useState<ExperienceData | null>(null);
 
   useEffect(() => {
     setSelectedExperienceId(data?.experiences[0].id);
@@ -46,10 +52,21 @@ export function Experience() {
   }, []);
 
   useEffect(() => {
-    const selectedExperienceFound = data?.experiences.find(
-      (experience) => experience.id === selectedExperienceId,
-    );
-    setSelectedExperience(selectedExperienceFound);
+    if (selectedExperienceId) {
+      const selectedExperienceFound = data?.experiences.find(
+        (experience) => experience.id === selectedExperienceId,
+      );
+
+      if (selectedExperienceFound) {
+        const selectedExperienceFoundFormatted = {
+          ...selectedExperienceFound,
+          startDate: formatDate(selectedExperienceFound?.startDate),
+          endDate: formatDate(selectedExperienceFound?.endDate),
+        } as ExperienceData;
+
+        setSelectedExperience(selectedExperienceFoundFormatted);
+      }
+    }
   }, [selectedExperienceId]);
 
   if (data?.experiences) {
