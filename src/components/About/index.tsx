@@ -3,7 +3,6 @@ import {
   Flex,
   SimpleGrid,
   Stack,
-  Text,
 } from '@chakra-ui/react';
 import { Reveal } from 'react-awesome-reveal';
 import { keyframes } from '@emotion/react';
@@ -11,6 +10,7 @@ import { gql, useQuery } from '@apollo/client';
 import { AboutDescription } from './AboutDescription';
 import { AboutProfilePicture } from './AboutProfilePicture';
 import { AboutTechnologies } from './AboutTechnologies';
+import { SectionTitle } from '../utils/SectionTitle';
 
 const GET_TECHNOLOGIES = gql`
   query GetTechnologies {
@@ -56,31 +56,9 @@ export function About() {
       triggerOnce
     >
       <Flex w="100%" flexDir="column" id="about-me">
-        <Flex alignItems="center">
-          <Text
-            as="span"
-            fontFamily="Roboto Mono"
-            color="brandRed.500"
-            fontWeight="medium"
-            fontSize="1.5rem"
-          >
-            01.
-            {' '}
-          </Text>
-          <Text as="h3" fontSize="2rem" fontWeight="semibold" ml="2">
-            About Me
-          </Text>
-          <Box
-            display="inline-block"
-            borderBottomWidth="thin"
-            opacity={0.5}
-            h={0}
-            ml="6"
-            w="40%"
-          />
-        </Flex>
+        <SectionTitle name="About Me" number={1} />
         <Flex>
-          <SimpleGrid marginY="10" columns={2} spacing="10">
+          <SimpleGrid columns={2} spacing="10">
             <Stack spacing="6" fontSize="1.125rem" color="gray.300">
               <AboutDescription />
               <AboutTechnologies technologies={data?.technologies} />
