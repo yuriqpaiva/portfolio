@@ -1,5 +1,11 @@
 import {
-  Box, Flex, HStack, Stack, Text,
+  Box,
+  Flex,
+  HStack,
+  SimpleGrid,
+  Stack,
+  Text,
+  Image,
 } from '@chakra-ui/react';
 import { Reveal } from 'react-awesome-reveal';
 import { keyframes } from '@emotion/react';
@@ -50,12 +56,7 @@ export function About() {
       keyframes={customAnimation}
       triggerOnce
     >
-      <Flex
-        w="100%"
-        flexDir="column"
-        id="about-me"
-
-      >
+      <Flex w="100%" flexDir="column" id="about-me">
         <Flex alignItems="center">
           <Text
             as="span"
@@ -80,7 +81,7 @@ export function About() {
           />
         </Flex>
         <Flex>
-          <Flex marginY="10" width="50%">
+          <SimpleGrid marginY="10" columns={2} spacing="10">
             <Stack spacing="6" fontSize="1.125rem" color="gray.300">
               <Text>
                 Hey! My name is Yuri and welcome to my portfolio. I&apos;m a
@@ -93,9 +94,7 @@ export function About() {
                 started to get more and more interest in Web Development,
                 mastering and focusing in JavaScript Stack using
                 {' '}
-                <UnderlineLink href="https://reactjs.org/">
-                  React
-                </UnderlineLink>
+                <UnderlineLink href="https://reactjs.org/">React</UnderlineLink>
                 ,
                 <UnderlineLink href="https://reactnative.dev/">
                   React Native
@@ -137,7 +136,53 @@ export function About() {
                 )}
               </Box>
             </Stack>
-          </Flex>
+            <Box
+              boxSize="300px"
+              borderRadius={12}
+              position="relative"
+              _hover={{
+                _after: {
+                  opacity: 0,
+                },
+              }}
+              role="group"
+              _after={{
+                content: '""',
+                opacity: 0.1,
+                transition: 'opacity 0.2s ease-in-out',
+                position: 'absolute',
+                top: 0,
+                bottom: 0,
+                right: 0,
+                left: 0,
+                height: '100%',
+                width: '100%',
+                bg: 'brandRed.500',
+              }}
+            >
+              <Image
+                borderRadius={12}
+                src="https://github.com/yuriqpaiva.png"
+                alt="Github profile picture"
+              />
+              <Box
+                position="absolute"
+                height={300}
+                width={300}
+                bg="transparent"
+                borderRadius={12}
+                borderWidth={2}
+                borderColor="brandRed.500"
+                top={8}
+                left={8}
+                transition="transform 0.2s ease-in-out"
+                zIndex={-1}
+                _groupHover={{
+                  transform: 'translate(-10px, -10px)',
+                }}
+              />
+            </Box>
+          </SimpleGrid>
         </Flex>
       </Flex>
     </Box>
