@@ -16,19 +16,10 @@ interface CompanyDetailProps {
     endDate: string | null;
     url: string;
   } | null;
+  isMounting: boolean;
 }
 
-export function ExperienceDetail({ experience }: CompanyDetailProps) {
-  const [isMounting, setIsMounting] = useState(true);
-
-  useEffect(() => {
-    setIsMounting(true);
-    const timeout = setTimeout(() => {
-      setIsMounting(false);
-    }, 100);
-    return () => clearTimeout(timeout);
-  }, [experience]);
-
+export function ExperienceDetail({ experience, isMounting }: CompanyDetailProps) {
   if (experience && !isMounting) {
     return (
       <Box as={Reveal} keyframes={revealAnimation} triggerOnce h={496}>

@@ -46,7 +46,17 @@ export function Experience() {
     setSelectedExperienceId(data?.experiences[0].id);
   }, [data]);
 
+  const [experienceDetailIsMounting, setExperienceDetailIsMounting] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setExperienceDetailIsMounting(false);
+    }, 100);
+    return () => clearTimeout(timeout);
+  }, [experienceDetailIsMounting]);
+
   const handleExperienceChange = useCallback((id: string) => {
+    setExperienceDetailIsMounting(true);
     setSelectedExperienceId(id);
   }, []);
 
@@ -80,6 +90,7 @@ export function Experience() {
           />
           <ExperienceDetail
             experience={selectedExperience}
+            isMounting={experienceDetailIsMounting}
           />
         </Flex>
       </Flex>
