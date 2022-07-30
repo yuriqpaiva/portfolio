@@ -8,6 +8,7 @@ import {
   UnorderedList,
 } from '@chakra-ui/react';
 import { RiExternalLinkLine, RiGithubLine } from 'react-icons/ri';
+import { IconLink } from '../../utils/IconLink';
 import { ProjectImage } from './ProjectImage';
 
 interface HighlightProjectProps {
@@ -69,26 +70,10 @@ export function HighlightProject({ project }: HighlightProjectProps) {
         </UnorderedList>
         <Flex gap="8" h="20%" alignItems="end">
           {project.github_url && (
-            <Link href={project.github_url} isExternal>
-              <Icon
-                as={RiGithubLine}
-                boxSize="1.75rem"
-                color="gray.300"
-                transition="color 0.2s ease-in-out"
-                _hover={{ color: 'brandRed.500' }}
-              />
-            </Link>
+            <IconLink href={project.github_url} icon={RiGithubLine} />
           )}
           {project.deploy_url && (
-            <Link href={project.deploy_url} isExternal>
-              <Icon
-                as={RiExternalLinkLine}
-                boxSize="1.75rem"
-                color="gray.300"
-                transition="color 0.2s ease-in-out"
-                _hover={{ color: 'brandRed.500' }}
-              />
-            </Link>
+            <IconLink href={project.deploy_url} icon={RiExternalLinkLine} />
           )}
         </Flex>
       </Flex>
