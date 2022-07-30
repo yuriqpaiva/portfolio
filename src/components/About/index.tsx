@@ -40,7 +40,7 @@ export function About() {
       keyframes={revealAnimation}
       triggerOnce
     >
-      <Flex w="100%" flexDir="column" id="about-me">
+      <Flex w="100%" flexDir="column" id="about-me" as="section">
         <SectionTitle name="About Me" number={1} />
         <Flex>
           <SimpleGrid columns={2} spacing="10">

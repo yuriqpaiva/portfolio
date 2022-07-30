@@ -1,10 +1,12 @@
-import { Flex } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { gql, useQuery } from '@apollo/client';
 import { useCallback, useEffect, useState } from 'react';
+import Reveal from 'react-awesome-reveal';
 import { SectionTitle } from '../utils/SectionTitle';
 import { ExperienceDetail } from './ExperienceDetail';
 import { ExperienceList } from './ExperiencesList';
 import { formatDate } from '../../utils/functions/formatDate';
+import { revealAnimation } from '../../utils/animations/revealAnimation';
 
 const GET_EXPERIENCES = gql`
   query GetExperiences {
@@ -80,20 +82,31 @@ export function Experience() {
 
   if (data?.experiences) {
     return (
-      <Flex width="70%" mt="40" flexDir="column" mb="20">
-        <SectionTitle name="Experience" number={2} justify="flex-start" />
-        <Flex>
-          <ExperienceList
-            experiences={data?.experiences}
-            selectedExperienceId={selectedExperienceId}
-            onExperienceChange={handleExperienceChange}
-          />
-          <ExperienceDetail
-            experience={selectedExperience}
-            isMounting={experienceDetailIsMounting}
-          />
+      <Box
+        mt={20}
+        w="100%"
+        display="flex"
+        as={Reveal}
+        delay={300}
+        keyframes={revealAnimation}
+        triggerOnce
+        width="70%"
+      >
+        <Flex w="100%" mt="40" flexDir="column" as="section" id="experience">
+          <SectionTitle name="Experience" number={2} justify="flex-start" />
+          <Flex>
+            <ExperienceList
+              experiences={data?.experiences}
+              selectedExperienceId={selectedExperienceId}
+              onExperienceChange={handleExperienceChange}
+            />
+            <ExperienceDetail
+              experience={selectedExperience}
+              isMounting={experienceDetailIsMounting}
+            />
+          </Flex>
         </Flex>
-      </Flex>
+      </Box>
     );
   }
   return null;

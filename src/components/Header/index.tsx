@@ -8,7 +8,7 @@ import { NavItem } from './NavItem';
 
 const navItems = [
   { name: 'About Me', href: '/#about-me' },
-  { name: 'Experience', href: '/' },
+  { name: 'Experience', href: '/#experience' },
   { name: 'Projects', href: '/' },
   { name: 'Contact', href: '/s' },
 ];
