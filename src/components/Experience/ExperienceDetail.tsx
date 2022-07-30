@@ -43,7 +43,7 @@ export function ExperienceDetail({ experience, isMounting }: CompanyDetailProps)
           {experience.duties.map((duty) => (
             <Flex mt="8" alignItems="center" key={duty}>
               <Icon as={RiArrowRightSLine} boxSize={6} color="brandRed.500" />
-              <Text ml="2">{duty}</Text>
+              <Text ml="2" color="gray.200">{duty}</Text>
             </Flex>
           ))}
         </Flex>
