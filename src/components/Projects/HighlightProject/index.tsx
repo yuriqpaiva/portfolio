@@ -64,7 +64,7 @@ export function HighlightProject({ project }: HighlightProjectProps) {
           h="10%"
         >
           {project.technologies.map((technology) => (
-            <ListItem>{technology}</ListItem>
+            <ListItem key={technology}>{technology}</ListItem>
           ))}
         </UnorderedList>
         <Flex gap="8" h="20%" alignItems="end">

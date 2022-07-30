@@ -35,7 +35,7 @@ export function Projects() {
       <SectionTitle name="Projects that I've built" number={3} />
       <Stack spacing="12">
         {data?.projects.map((project) => (
-          <HighlightProject project={project} />
+          <HighlightProject project={project} key={project.title} />
         ))}
       </Stack>
     </Flex>
