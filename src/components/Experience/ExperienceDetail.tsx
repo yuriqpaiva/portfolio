@@ -1,7 +1,6 @@
 import {
   Box, Flex, Icon, Text,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
 import Reveal from 'react-awesome-reveal';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { revealAnimation } from '../../utils/animations/revealAnimation';
