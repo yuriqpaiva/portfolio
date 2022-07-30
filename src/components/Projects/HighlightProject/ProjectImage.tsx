@@ -1,14 +1,17 @@
 import { Image, Link } from '@chakra-ui/react';
 
 interface ProjectImageProps {
-  href: string;
+  href: string | null;
+  src: string;
 }
 
-export function ProjectImage({ href }: ProjectImageProps) {
+export function ProjectImage({ href, src }: ProjectImageProps) {
   return (
     <Link
-      href={href}
+      isExternal
+      href={href || '/'}
       w="40%"
+      h="100%"
       position="relative"
       _hover={{
         _after: {
@@ -31,8 +34,7 @@ export function ProjectImage({ href }: ProjectImageProps) {
     >
       <Image
         objectFit="cover"
-        h="100%"
-        src="https://adriandelgado.dev/static/media/coinflip.fdff9603.webp"
+        src={src}
         borderRadius={8}
       />
     </Link>
