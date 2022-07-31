@@ -1,6 +1,5 @@
 import {
   Flex,
-  OrderedList,
   Icon,
   Box,
   Button,
@@ -12,14 +11,7 @@ import { RiMenu3Fill, RiCloseFill } from 'react-icons/ri';
 import { useSidebarData } from '../../hooks/useSidebarData';
 import { LogoIcon } from '../../icons/Logo';
 import { Sidebar } from '../Sidebar';
-import { NavItem } from './NavItem';
-
-const navItems = [
-  { name: 'About Me', href: '/#about-me' },
-  { name: 'Experience', href: '/#experience' },
-  { name: 'Projects', href: '/#projects' },
-  { name: 'Contact', href: '/#contact' },
-];
+import { Navbar } from './Navbar/Navbar';
 
 export function Header() {
   const [hiddenHeader, setHiddenHeader] = useState(false);
@@ -65,13 +57,7 @@ export function Header() {
         <Box as="a" href="/">
           <Icon as={LogoIcon} />
         </Box>
-        {isWideVersion && (
-          <OrderedList display="flex" gap="10">
-            {navItems.map((item, index) => (
-              <NavItem item={item} index={index} key={item.name} />
-            ))}
-          </OrderedList>
-        )}
+        {isWideVersion && <Navbar />}
       </Flex>
       {!isWideVersion && (
         <Button

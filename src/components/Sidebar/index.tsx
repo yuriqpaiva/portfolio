@@ -1,12 +1,11 @@
 import {
   Drawer,
   DrawerBody,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  Text,
 } from '@chakra-ui/react';
 import { useSidebarData } from '../../hooks/useSidebarData';
+import { Navbar } from '../Header/Navbar/Navbar';
 
 export function Sidebar() {
   const { onClose, isOpen } = useSidebarData();
@@ -15,9 +14,8 @@ export function Sidebar() {
     <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
       <DrawerOverlay>
         <DrawerContent bg="brandBlue.800" p="8" zIndex={0}>
-          <DrawerHeader>Navegação</DrawerHeader>
           <DrawerBody>
-            <Text>Navigation</Text>
+            <Navbar flexDir="column" mt="20" isSidebar />
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>

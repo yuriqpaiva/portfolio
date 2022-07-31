@@ -1,6 +1,7 @@
-import { Box, ListItem } from '@chakra-ui/react';
+import { Button, ListItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useSidebarData } from '../../../hooks/useSidebarData';
 
 interface NavItemProps {
   index: number;
@@ -8,10 +9,12 @@ interface NavItemProps {
     name: string;
     href: string;
   };
+  isSidebar?: boolean;
 }
 
-export function NavItem({ index, item }: NavItemProps) {
+export function NavItem({ index, item, isSidebar }: NavItemProps) {
   const [showComponent, setShowComponent] = useState(false);
+  const { onToggle } = useSidebarData();
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,13 +36,19 @@ export function NavItem({ index, item }: NavItemProps) {
         }}
         position="relative"
         as={motion.div}
-        initial={{ opacity: 0, translateY: -100 }}
-        animate={{ opacity: 1, translateY: 0 }}
+        initial={isSidebar ? { opacity: 0 } : { opacity: 0, translateY: -100 }}
+        animate={isSidebar ? { opacity: 1 } : { opacity: 1, translateY: 0 }}
         transition="transform 1s ease-in-out, color 0.2s ease-in-out"
       >
-        <Box as="a" href={item.href}>
+        <Button
+          onClick={() => {
+            window.location = `${item.href}` as (string | Location) & Location;
+            onToggle();
+          }}
+          variant="none"
+        >
           {item.name}
-        </Box>
+        </Button>
       </ListItem>
     );
   }
