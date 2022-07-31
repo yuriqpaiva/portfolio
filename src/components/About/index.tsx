@@ -32,7 +32,6 @@ export function About() {
 
   return (
     <Box
-      mt={80}
       w="100%"
       display="flex"
       as={Reveal}
@@ -40,7 +39,13 @@ export function About() {
       keyframes={revealAnimation}
       triggerOnce
     >
-      <Flex w="100%" flexDir="column" id="about-me" as="section">
+      <Flex
+        w="100%"
+        flexDir="column"
+        as="section"
+        id="about-me"
+        pt={56}
+      >
         <SectionTitle name="About Me" number={1} />
         <Flex>
           <SimpleGrid columns={2} spacing="10">

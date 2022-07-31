@@ -83,7 +83,6 @@ export function Experience() {
   if (data?.experiences) {
     return (
       <Box
-        mt="40"
         w="100%"
         display="flex"
         as={Reveal}
@@ -92,7 +91,7 @@ export function Experience() {
         triggerOnce
         width="70%"
       >
-        <Flex w="100%" flexDir="column" as="section" id="experience">
+        <Flex w="100%" flexDir="column" as="section" id="experience" pt={56}>
           <SectionTitle name="Experience" number={2} justify="flex-start" />
           <Flex>
             <ExperienceList
