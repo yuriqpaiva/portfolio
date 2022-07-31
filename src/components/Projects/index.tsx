@@ -49,7 +49,7 @@ export function Projects() {
       w="100%"
       display="flex"
       as={Reveal}
-      delay={300}
+      delay={200}
       keyframes={revealAnimation}
       triggerOnce
     >

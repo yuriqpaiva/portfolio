@@ -11,7 +11,7 @@ export function Contact() {
     <Box
       display="flex"
       as={Reveal}
-      delay={300}
+      delay={200}
       keyframes={revealAnimation}
       triggerOnce
       w="70%"
