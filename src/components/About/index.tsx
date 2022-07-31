@@ -38,13 +38,14 @@ export function About() {
       delay={300}
       keyframes={revealAnimation}
       triggerOnce
+      mt={40}
     >
       <Flex
         w="100%"
         flexDir="column"
         as="section"
         id="about-me"
-        pt={56}
+        pt={30}
       >
         <SectionTitle name="About Me" number={1} />
         <Flex>
