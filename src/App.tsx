@@ -1,7 +1,9 @@
 import { Flex } from '@chakra-ui/react';
 import { About } from './components/About';
 import { ArrowDropDown } from './components/ArrowDropDown';
+import { Contact } from './components/Contact';
 import { Experience } from './components/Experience';
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { MainPresentation } from './components/MainPresentation';
 import { Projects } from './components/Projects';
@@ -28,6 +30,8 @@ function App() {
         <About />
         <Experience />
         <Projects />
+        <Contact />
+        <Footer />
       </Flex>
     </>
   );

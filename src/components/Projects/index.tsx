@@ -44,7 +44,7 @@ export function Projects() {
   const { data } = useQuery<GetProjectsResponse>(GET_PROJECTS);
 
   return (
-    <Flex w="100%" flexDir="column" as="section" id="experience" mb="40">
+    <Flex w="100%" flexDir="column" as="section" id="projects" mb="40">
       <SectionTitle name="Projects that I've built" number={3} />
       <Stack spacing="12">
         {data?.projects.map((project) => {
