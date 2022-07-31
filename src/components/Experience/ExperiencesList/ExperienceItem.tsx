@@ -1,13 +1,13 @@
 import { Button, Text } from '@chakra-ui/react';
-import { memo } from 'react';
 
 interface ExperienceItemProps {
   active?: boolean;
   experience: { id: string; place: string };
+  // eslint-disable-next-line no-unused-vars
   handleExperienceChange: (value: string) => void;
 }
 
-function ExperienceItemComponent({
+export function ExperienceItem({
   active = false,
   experience,
   handleExperienceChange,
@@ -38,8 +38,3 @@ function ExperienceItemComponent({
     </Button>
   );
 }
-
-export const ExperienceItem = memo(
-  ExperienceItemComponent,
-  (prevProps, props) => Object.is(prevProps.experience.id, props.experience.id),
-);
