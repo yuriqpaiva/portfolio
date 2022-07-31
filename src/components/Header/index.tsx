@@ -24,7 +24,7 @@ const navItems = [
 export function Header() {
   const [hiddenHeader, setHiddenHeader] = useState(false);
   const [isSettingHidden, setIsSettingHidden] = useState(false);
-  const { onToggle } = useSidebarData();
+  const { onToggle, isOpen } = useSidebarData();
 
   const isWideVersion = useBreakpointValue({ base: false, lg: true });
 
@@ -44,8 +44,6 @@ export function Header() {
     return () => clearTimeout(timeout);
   }, [isSettingHidden]);
 
-  const [isRotated, setIsRotated] = useState(false);
-
   return (
     <>
       <Flex
@@ -63,7 +61,7 @@ export function Header() {
         zIndex={100}
         pos="relative"
       >
-        <Sidebar />
+        {!isWideVersion && <Sidebar />}
         <Box as="a" href="/">
           <Icon as={LogoIcon} />
         </Box>
@@ -79,18 +77,15 @@ export function Header() {
         <Button
           variant="none"
           p={0}
-          onClick={() => {
-            onToggle();
-            setIsRotated((currentValue) => !currentValue);
-          }}
+          onClick={onToggle}
           pos="absolute"
           top={41}
           right={14}
           zIndex={1500}
           transition="transform 0.5s ease-in-out"
-          transform={isRotated ? 'rotate(180deg)' : 'rotate(0deg)'}
+          transform={isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}
         >
-          <Icon as={isRotated ? RiCloseFill : RiMenu3Fill} boxSize="2.25rem" color="brandRed.500" />
+          <Icon as={isOpen ? RiCloseFill : RiMenu3Fill} boxSize="2.25rem" color="brandRed.500" />
         </Button>
       )}
     </>

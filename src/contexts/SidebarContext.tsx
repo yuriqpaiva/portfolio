@@ -3,6 +3,7 @@ import { createContext, ReactNode } from 'react';
 
 interface SideBarContextProps {
   isOpen: boolean;
+  onClose: () => void;
   onToggle: () => void;
 }
 
@@ -13,10 +14,16 @@ interface SideBarProviderProps {
 }
 
 export function SidebarProvider({ children }: SideBarProviderProps) {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onClose, onToggle } = useDisclosure();
 
   return (
-    <SidebarContext.Provider value={{ isOpen, onToggle }}>
+    <SidebarContext.Provider
+      value={{
+        isOpen,
+        onToggle,
+        onClose,
+      }}
+    >
       {children}
     </SidebarContext.Provider>
   );
