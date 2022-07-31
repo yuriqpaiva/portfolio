@@ -22,9 +22,9 @@ export function NavItem({ index, item, isSidebar }: NavItemProps) {
     }, 100 * (index + 1));
   }, []);
 
-  async function goToReference() {
+  async function goToReference(href: string): Promise<void> {
     setTimeout(() => {
-      window.location = `${item.href}` as (string | Location) & Location;
+      window.location = href as (string | Location) & Location;
     }, 200);
   }
 
@@ -48,8 +48,10 @@ export function NavItem({ index, item, isSidebar }: NavItemProps) {
       >
         <Button
           onClick={async () => {
-            goToReference();
-            onToggle();
+            await goToReference(item.href);
+            if (isSidebar) {
+              onToggle();
+            }
           }}
           variant="none"
         >

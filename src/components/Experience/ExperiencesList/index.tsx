@@ -4,6 +4,7 @@ import { ExperienceItem } from './ExperienceItem';
 interface ExperienceListProps {
   experiences: { id: string; place: string }[];
   selectedExperienceId?: string;
+  // eslint-disable-next-line no-unused-vars
   onExperienceChange: (value: string) => void;
 }
 
