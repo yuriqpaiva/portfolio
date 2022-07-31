@@ -1,4 +1,5 @@
 import { Button, Text } from '@chakra-ui/react';
+import { memo } from 'react';
 
 interface ExperienceItemProps {
   active?: boolean;
@@ -6,7 +7,7 @@ interface ExperienceItemProps {
   handleExperienceChange: (value: string) => void;
 }
 
-export function ExperienceItem({
+function ExperienceItemComponent({
   active = false,
   experience,
   handleExperienceChange,
@@ -37,3 +38,8 @@ export function ExperienceItem({
     </Button>
   );
 }
+
+export const ExperienceItem = memo(
+  ExperienceItemComponent,
+  (prevProps, props) => Object.is(prevProps.experience.id, props.experience.id),
+);

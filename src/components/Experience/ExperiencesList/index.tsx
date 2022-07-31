@@ -1,5 +1,5 @@
 import { Flex, Stack } from '@chakra-ui/react';
-import { ExperienceItem } from './ExperienceItem';
+import { ExperienceItemComponent } from './ExperienceItem';
 
 interface ExperienceListProps {
   experiences: { id: string; place: string }[];
@@ -16,7 +16,7 @@ export function ExperienceList({
     <Flex w="20%">
       <Stack spacing="4">
         {experiences.map((experience) => (
-          <ExperienceItem
+          <ExperienceItemComponent
             handleExperienceChange={onExperienceChange}
             active={experience.id === selectedExperienceId}
             experience={experience}
