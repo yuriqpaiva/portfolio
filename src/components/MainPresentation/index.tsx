@@ -16,7 +16,7 @@ export function MainPresentation() {
       w="100%"
       visibility={showComponent ? 'visible' : 'hidden'}
       maxWidth={1160}
-      h="100vh"
+      h="90vh"
       justify="center"
       flexDir="column"
       px="10"
