@@ -7,7 +7,7 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { MainPresentation } from './components/MainPresentation';
 import { Projects } from './components/Projects';
-import { Sidebar } from './components/Sidebar';
+import { Sidebar } from './components/Header/Sidebar';
 import { SocialMediaList } from './components/SocialMediaList';
 
 function App() {

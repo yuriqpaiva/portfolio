@@ -9,9 +9,10 @@ interface NavItemProps {
     name: string;
     href: string;
   };
+  isSidebar?: boolean;
 }
 
-export function NavItem({ index, item }: NavItemProps) {
+export function NavItem({ index, item, isSidebar }: NavItemProps) {
   const [showComponent, setShowComponent] = useState(false);
   const { onToggle } = useSidebarData();
 
@@ -41,9 +42,9 @@ export function NavItem({ index, item }: NavItemProps) {
         }}
         position="relative"
         as={motion.div}
-        initial={{ opacity: 0, translateY: -100 }}
-        animate={{ opacity: 1, translateY: 0 }}
-        transition="transform 1s ease-in-out, color 0.2s ease-in-out"
+        initial={isSidebar ? { opacity: 0 } : { opacity: 0, translateY: -100 }}
+        animate={isSidebar ? { opacity: 1 } : { opacity: 1, translateY: 0 }}
+        transition="transform 0.5s ease-in-out, color 0.2s ease-in-out"
       >
         <Button
           onClick={async () => {
