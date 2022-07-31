@@ -1,5 +1,5 @@
 import {
-  Box, Button, Flex, Icon, Link, Text,
+  Box, Button, Flex, Icon, Text,
 } from '@chakra-ui/react';
 import Reveal from 'react-awesome-reveal';
 import { RiContactsBook2Line } from 'react-icons/ri';

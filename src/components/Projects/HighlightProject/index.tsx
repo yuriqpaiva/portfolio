@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Icon,
   Link,
   ListItem,
   Text,

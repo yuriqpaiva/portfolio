@@ -1,13 +1,9 @@
 import {
   Box,
   Flex,
-  HStack,
-  Icon,
-  ListItem,
   SimpleGrid,
   Stack,
   Text,
-  UnorderedList,
 } from '@chakra-ui/react';
 import { gql, useQuery } from '@apollo/client';
 import Reveal from 'react-awesome-reveal';
