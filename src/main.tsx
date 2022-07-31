@@ -6,12 +6,15 @@ import App from './App';
 import { theme } from './styles/theme';
 import { client } from './lib/apollo';
 import './styles/global.css';
+import { SidebarProvider } from './contexts/SidebarContext';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <ApolloProvider client={client}>
-        <App />
+        <SidebarProvider>
+          <App />
+        </SidebarProvider>
       </ApolloProvider>
     </ChakraProvider>
   </React.StrictMode>,

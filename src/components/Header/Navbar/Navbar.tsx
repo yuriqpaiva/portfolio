@@ -12,11 +12,11 @@ interface NavbarProps extends ListProps {
   isSidebar?: boolean;
 }
 
-export function Navbar({ isSidebar, ...rest }: NavbarProps) {
+export function Navbar({ ...rest }: NavbarProps) {
   return (
     <OrderedList display="flex" gap="10" {...rest}>
       {navItems.map((item, index) => (
-        <NavItem item={item} index={index} key={item.name} isSidebar />
+        <NavItem item={item} index={index} key={item.name} />
       ))}
     </OrderedList>
   );

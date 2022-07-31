@@ -9,10 +9,9 @@ interface NavItemProps {
     name: string;
     href: string;
   };
-  isSidebar?: boolean;
 }
 
-export function NavItem({ index, item, isSidebar }: NavItemProps) {
+export function NavItem({ index, item }: NavItemProps) {
   const [showComponent, setShowComponent] = useState(false);
   const { onToggle } = useSidebarData();
 
@@ -21,6 +20,12 @@ export function NavItem({ index, item, isSidebar }: NavItemProps) {
       setShowComponent(true);
     }, 100 * (index + 1));
   }, []);
+
+  async function goToReference() {
+    setTimeout(() => {
+      window.location = `${item.href}` as (string | Location) & Location;
+    }, 200);
+  }
 
   if (showComponent) {
     return (
@@ -36,13 +41,13 @@ export function NavItem({ index, item, isSidebar }: NavItemProps) {
         }}
         position="relative"
         as={motion.div}
-        initial={isSidebar ? { opacity: 0 } : { opacity: 0, translateY: -100 }}
-        animate={isSidebar ? { opacity: 1 } : { opacity: 1, translateY: 0 }}
+        initial={{ opacity: 0, translateY: -100 }}
+        animate={{ opacity: 1, translateY: 0 }}
         transition="transform 1s ease-in-out, color 0.2s ease-in-out"
       >
         <Button
-          onClick={() => {
-            window.location = `${item.href}` as (string | Location) & Location;
+          onClick={async () => {
+            goToReference();
             onToggle();
           }}
           variant="none"

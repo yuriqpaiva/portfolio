@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react';
 import { RiMenu3Fill, RiCloseFill } from 'react-icons/ri';
 import { useSidebarData } from '../../hooks/useSidebarData';
 import { LogoIcon } from '../../icons/Logo';
-import { Sidebar } from '../Sidebar';
 import { Navbar } from './Navbar/Navbar';
 
 export function Header() {
@@ -53,7 +52,6 @@ export function Header() {
         zIndex={100}
         pos="relative"
       >
-        {!isWideVersion && <Sidebar />}
         <Box as="a" href="/">
           <Icon as={LogoIcon} />
         </Box>
@@ -65,10 +63,10 @@ export function Header() {
           p={0}
           onClick={onToggle}
           pos="absolute"
-          top={41}
           right={14}
           zIndex={1500}
-          transition="transform 0.5s ease-in-out"
+          top={hiddenHeader && !isOpen ? -122 : 41}
+          transition="transform 0.5s ease-in-out, top 0.3s"
           transform={isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}
         >
           <Icon as={isOpen ? RiCloseFill : RiMenu3Fill} boxSize="2.25rem" color="brandRed.500" />

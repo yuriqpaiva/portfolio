@@ -11,11 +11,11 @@ export function Sidebar() {
   const { onClose, isOpen } = useSidebarData();
 
   return (
-    <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+    <Drawer isOpen={isOpen} placement="right" onClose={onClose} returnFocusOnClose>
       <DrawerOverlay>
         <DrawerContent bg="brandBlue.800" p="8" zIndex={0}>
           <DrawerBody>
-            <Navbar flexDir="column" mt="20" isSidebar />
+            <Navbar flexDir="column" mt="20" />
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>

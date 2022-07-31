@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, useBreakpointValue } from '@chakra-ui/react';
 import { About } from './components/About';
 import { ArrowDropDown } from './components/ArrowDropDown';
 import { Contact } from './components/Contact';
@@ -7,15 +7,16 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { MainPresentation } from './components/MainPresentation';
 import { Projects } from './components/Projects';
+import { Sidebar } from './components/Sidebar';
 import { SocialMediaList } from './components/SocialMediaList';
-import { SidebarProvider } from './contexts/SidebarContext';
 
 function App() {
+  const isWideVersion = useBreakpointValue({ base: false, lg: true });
+
   return (
     <>
-      <SidebarProvider>
-        <Header />
-      </SidebarProvider>
+      <Header />
+      {!isWideVersion && <Sidebar />}
       <SocialMediaList />
       <Flex
         as="main"
