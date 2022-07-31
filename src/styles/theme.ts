@@ -19,6 +19,9 @@ const customTheme = {
       },
     },
   },
+  zIndices: {
+    overlay: 100,
+  },
   fonts: {
     heading: 'Source Sans Pro',
     body: 'Source Sans Pro',

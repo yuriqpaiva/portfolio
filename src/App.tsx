@@ -8,11 +8,14 @@ import { Header } from './components/Header';
 import { MainPresentation } from './components/MainPresentation';
 import { Projects } from './components/Projects';
 import { SocialMediaList } from './components/SocialMediaList';
+import { SidebarProvider } from './contexts/SidebarContext';
 
 function App() {
   return (
     <>
-      <Header />
+      <SidebarProvider>
+        <Header />
+      </SidebarProvider>
       <SocialMediaList />
       <Flex
         as="main"
@@ -23,7 +26,6 @@ function App() {
         maxWidth={1160}
         overflowY="auto"
         overflowX="hidden"
-
       >
         <MainPresentation />
         <ArrowDropDown />
