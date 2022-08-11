@@ -15,8 +15,7 @@ function App() {
   return (
     <>
       <Header />
-      {!isWideVersion && <Sidebar />}
-      <SocialMediaList />
+      {!isWideVersion ? <Sidebar /> : <SocialMediaList />}
       <Flex
         as="main"
         mx="auto"
@@ -27,7 +26,10 @@ function App() {
         overflowY="auto"
         overflowX="hidden"
         px={{
-          base: 6, md: 12, lg: 16, xl: 0,
+          base: 6,
+          md: 12,
+          lg: 20,
+          xl: 6,
         }}
         zIndex={1000}
       >
