@@ -14,7 +14,7 @@ export function ExperienceList({
   onExperienceChange,
 }: ExperienceListProps) {
   return (
-    <Flex w={{ base: '100%', md: '20%' }} mb={{ base: '6', md: '0' }}>
+    <Flex w={{ base: '100%', md: '20%' }} mb={{ base: '6', md: '0' }} mr={{ base: '0', md: '8' }}>
       <Stack spacing="4" direction={{ base: 'row', md: 'column' }}>
         {experiences.map((experience) => (
           <ExperienceItem
