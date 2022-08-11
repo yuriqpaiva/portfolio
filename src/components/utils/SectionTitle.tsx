@@ -9,20 +9,30 @@ interface SectionTitleProps extends FlexProps {
 
 export function SectionTitle({ name, number, ...rest }: SectionTitleProps) {
   return (
-    <Flex flex={1} alignItems="center" mb="10" {...rest}>
+    <Flex
+      flex={1}
+      alignItems="center"
+      mb="10"
+      {...rest}
+    >
       <Text
         as="span"
         fontFamily="Roboto Mono"
         color="brandRed.500"
         fontWeight="medium"
-        fontSize="1.5rem"
+        fontSize="clamp(26px,5vw,24px)"
       >
         0
         {number}
         .
         {' '}
       </Text>
-      <Text as="h3" fontSize="2rem" fontWeight="semibold" ml="2">
+      <Text
+        as="h3"
+        fontSize="clamp(26px,5vw,32px)"
+        fontWeight="semibold"
+        ml="2"
+      >
         {name}
       </Text>
       <Box

@@ -1,9 +1,9 @@
-import { Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import { UnderlineLink } from '../utils/UnderlineLink';
 
 export function AboutDescription() {
   return (
-    <>
+    <Box fontSize={{ base: '0.875rem', sm: '1rem', md: '1.125rem' }}>
       <Text>
         Hey! My name is Yuri and welcome to my portfolio. I&apos;m a
         {' '}
@@ -30,6 +30,6 @@ export function AboutDescription() {
         main focus is on build apps with performance, accessibility and great
         SEO, using Agile methodology.
       </Text>
-    </>
+    </Box>
   );
 }

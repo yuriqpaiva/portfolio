@@ -14,7 +14,7 @@ export function TechnologyItem({ technology }: TechnologyItemProps) {
   return (
     <Tooltip
       label={`${technology.description}`}
-      fontSize="1rem"
+      fontSize={{ base: '0.875rem', md: '1rem' }}
       p="4"
       bg="brandBlue.700"
     >
@@ -23,11 +23,22 @@ export function TechnologyItem({ technology }: TechnologyItemProps) {
         transition="transform 0.2s ease-in-out"
         flexDir="column"
         alignItems="center"
+        w={{ base: '8', md: '12' }}
+        h={{ base: '8', md: '12' }}
+        mx={{ base: 'auto', md: '0' }}
+        mb={6}
       >
-        <Image src={technology.image_url} alt="" w="14" h="14" />
-        <Text fontFamily="Roboto Mono" fontWeight="medium" mt="2" opacity={0.8} fontSize="0.875rem">{technology.name}</Text>
+        <Image src={technology.image_url} alt="" w="100%" h="100%" />
+        <Text
+          fontFamily="Roboto Mono"
+          fontWeight="medium"
+          mt="2"
+          color="gray.400"
+          fontSize={{ base: '0.75rem', md: '0.875rem' }}
+        >
+          {technology.name}
+        </Text>
       </Flex>
     </Tooltip>
-
   );
 }

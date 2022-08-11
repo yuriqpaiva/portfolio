@@ -3,9 +3,10 @@ import { Box, Image } from '@chakra-ui/react';
 export function AboutProfilePicture() {
   return (
     <Box
-      boxSize="300px"
+      boxSize={{ base: '60%', sm: '45%', md: '300px' }}
       borderRadius={12}
       position="relative"
+      mx={{ base: 'auto', md: 0 }}
       _hover={{
         _after: {
           opacity: 0,
@@ -33,8 +34,8 @@ export function AboutProfilePicture() {
       />
       <Box
         position="absolute"
-        height={300}
-        width={300}
+        height={{ base: '100%', md: 300 }}
+        width={{ base: '100%', md: 300 }}
         bg="transparent"
         borderRadius={12}
         borderWidth={2}

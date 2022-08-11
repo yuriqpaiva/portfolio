@@ -1,4 +1,6 @@
-import { Box, HStack, Text } from '@chakra-ui/react';
+import {
+  Box, SimpleGrid, Text,
+} from '@chakra-ui/react';
 import { TechnologyItem } from './TechnologyItem';
 
 interface AboutTechnologiesProps {
@@ -11,7 +13,7 @@ interface AboutTechnologiesProps {
 
 export function AboutTechnologies({ technologies }: AboutTechnologiesProps) {
   return (
-    <Box>
+    <Box fontSize={{ base: '0.875rem', sm: '1rem', md: '1.125rem' }}>
       <Text>
         Technologies that I&apos;ve been recently working with:
       </Text>
@@ -25,14 +27,17 @@ export function AboutTechnologies({ technologies }: AboutTechnologiesProps) {
         (*hover over icons for more information)
       </Text>
       {technologies && (
-      <HStack spacing="12">
+      <SimpleGrid
+        minChildWidth={20}
+        spacing={6}
+      >
         {technologies.map((technology) => (
           <TechnologyItem
             technology={technology}
             key={technology.name}
           />
         ))}
-      </HStack>
+      </SimpleGrid>
       )}
     </Box>
   );
