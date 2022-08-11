@@ -18,7 +18,7 @@ export function ExperienceItem({
       textAlign="start"
       filter="auto"
       transition="all 0.2s ease-in-out"
-      pl={2}
+      pl={{ md: 2 }}
       position="relative"
       borderRadius={0}
       role="group"

@@ -89,11 +89,11 @@ export function Experience() {
         delay={200}
         keyframes={revealAnimation}
         triggerOnce
-        width="70%"
+        width={{ base: '100%', md: '70%' }}
       >
         <Flex w="100%" flexDir="column" as="section" id="experience" pt={56}>
           <SectionTitle name="Experience" number={2} justify="flex-start" />
-          <Flex>
+          <Flex flexDir={{ base: 'column', md: 'row' }}>
             <ExperienceList
               experiences={data?.experiences}
               selectedExperienceId={selectedExperienceId}
