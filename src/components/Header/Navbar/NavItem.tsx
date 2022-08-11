@@ -44,7 +44,7 @@ export function NavItem({ index, item, isSidebar }: NavItemProps) {
         as={motion.div}
         initial={isSidebar ? { opacity: 0 } : { opacity: 0, translateY: -100 }}
         animate={isSidebar ? { opacity: 1 } : { opacity: 1, translateY: 0 }}
-        transition="transform 0.5s ease-in-out, color 0.2s ease-in-out"
+        transition="transform 0.5s ease-in-out, color 0.1s ease-in-out"
       >
         <Button
           onClick={async () => {
