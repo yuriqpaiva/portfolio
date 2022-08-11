@@ -19,7 +19,6 @@ export function MainPresentation() {
       h="90vh"
       justify="center"
       flexDir="column"
-      px="10"
       as={motion.div}
       initial={{ opacity: 0, translateX: 100 }}
       animate={{ opacity: 1, translateX: 0 }}
@@ -34,13 +33,24 @@ export function MainPresentation() {
       >
         Hi, my name is
       </Text>
-      <Text fontSize="5rem" fontWeight="bold" as="h1">
+      <Text fontSize="clamp(40px, 8vw, 80px)" fontWeight="bold" as="h1">
         Yuri Paiva.
       </Text>
-      <Text fontSize="5rem" fontWeight="bold" opacity="0.8" as="h2">
+      <Text
+        fontSize="clamp(40px, 8vw, 80px)"
+        fontWeight="bold"
+        opacity="0.8"
+        as="h2"
+      >
         {'<Full-Stack Developer />'}
       </Text>
-      <Text fontSize="1.25rem" as="h1" w={540} mt="8" color="gray.300">
+      <Text
+        fontSize={{ base: '1rem', md: '1.25rem' }}
+        as="h1"
+        w={{ base: 'auto', md: 540 }}
+        mt="8"
+        color="gray.300"
+      >
         I&apos;m Passionate about
         {' '}
         <Text as="strong" fontWeight="semibold" color="brandRed.500">

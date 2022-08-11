@@ -27,6 +27,9 @@ function App() {
         maxWidth={1160}
         overflowY="auto"
         overflowX="hidden"
+        px={{
+          base: 6, md: 12, lg: 16, xl: 0,
+        }}
       >
         <MainPresentation />
         <ArrowDropDown />

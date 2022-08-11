@@ -1,9 +1,5 @@
 import {
-  Flex,
-  Icon,
-  Box,
-  Button,
-  useBreakpointValue,
+  Flex, Icon, Box, Button, useBreakpointValue,
 } from '@chakra-ui/react';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { useEffect, useState } from 'react';
@@ -41,7 +37,11 @@ export function Header() {
         as="nav"
         justify="space-between"
         py="10"
-        px="14"
+        px={{
+          base: 6,
+          md: 12,
+          lg: 16,
+        }}
         position="fixed"
         left={0}
         right={0}
@@ -63,13 +63,22 @@ export function Header() {
           p={0}
           onClick={onToggle}
           pos="absolute"
-          right={14}
+          right={{
+            base: 6,
+            md: 12,
+            lg: 16,
+            xl: 0,
+          }}
           zIndex={1500}
           top={hiddenHeader && !isOpen ? -122 : 41}
           transition="transform 0.5s ease-in-out, top 0.3s"
           transform={isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}
         >
-          <Icon as={isOpen ? RiCloseFill : RiMenu3Fill} boxSize="2.25rem" color="brandRed.500" />
+          <Icon
+            as={isOpen ? RiCloseFill : RiMenu3Fill}
+            boxSize="2.25rem"
+            color="brandRed.500"
+          />
         </Button>
       )}
     </>
