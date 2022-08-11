@@ -49,7 +49,7 @@ export function Projects() {
       keyframes={revealAnimation}
       triggerOnce
     >
-      <Flex w="100%" flexDir="column" as="section" id="projects" mt="3rem" pt="2rem">
+      <Flex w="100%" flexDir="column" as="section" id="projects" mt="1rem" pt="2rem">
         <SectionTitle name="Projects that I've built" number={3} />
         <Stack spacing="12">
           {data?.projects.map((project) => {
