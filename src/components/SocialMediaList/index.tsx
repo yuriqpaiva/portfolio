@@ -1,19 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { RiLinkedinBoxFill, RiGithubFill, RiMailFill } from 'react-icons/ri';
+import { socialMedias } from '../../constants/socialMedias';
 import { SocialMediaItem } from './SocialMediaItem';
-
-const socialMedias = [
-  { icon: RiGithubFill, href: 'https://github.com/yuriqpaiva' },
-  {
-    icon: RiLinkedinBoxFill,
-    href: 'https://www.linkedin.com/in/yuri-queiroz-paiva-a4b7111b3/',
-  },
-  {
-    icon: RiMailFill,
-    href: 'mailto:yuriqpaiva@gmail.com',
-    noTargetBlank: true,
-  },
-];
 
 export function SocialMediaList() {
   return (
