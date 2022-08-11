@@ -23,8 +23,6 @@ function App() {
         flexDir="column"
         alignItems="center"
         maxWidth={1160}
-        overflowY="auto"
-        overflowX="hidden"
         px={{
           base: 6,
           md: 12,

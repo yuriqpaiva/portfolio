@@ -33,7 +33,7 @@ export function RelevantProject({ project }: HighlightProjectProps) {
       gap="8"
       role="group"
     >
-      <Flex justify="space-between" w="100%" h={50}>
+      <Flex justify="space-between" h={50}>
         <Icon as={RiFolderLine} color="brandRed.500" boxSize="2.5rem" />
         <HStack spacing="4">
           {project.github_url && (
@@ -67,6 +67,7 @@ export function RelevantProject({ project }: HighlightProjectProps) {
         color="gray.400"
         gap="6"
         h="10%"
+        w="100%"
         mt="6"
       >
         {project.technologies.map((technology) => (

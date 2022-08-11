@@ -69,7 +69,7 @@ export function Projects() {
         >
           Other relevant projects...
         </Text>
-        <SimpleGrid columns={3} spacing="10">
+        <SimpleGrid minChildWidth={{ base: 200, sm: 344 }} spacing="10">
           {data?.projects.map((project) => {
             if (project.category === 'relevant') {
               return <RelevantProject project={project} key={project.title} />;
