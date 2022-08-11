@@ -1,6 +1,5 @@
 import { Flex, useBreakpointValue } from '@chakra-ui/react';
 import { About } from './components/About';
-import { ArrowDropDown } from './components/ArrowDropDown';
 import { Contact } from './components/Contact';
 import { Experience } from './components/Experience';
 import { Footer } from './components/Footer';
@@ -30,9 +29,9 @@ function App() {
         px={{
           base: 6, md: 12, lg: 16, xl: 0,
         }}
+        zIndex={1000}
       >
         <MainPresentation />
-        <ArrowDropDown />
         <About />
         <Experience />
         <Projects />

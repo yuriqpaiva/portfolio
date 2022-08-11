@@ -1,6 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { ArrowDropDown } from '../ArrowDropDown';
 
 export function MainPresentation() {
   const [showComponent, setShowComponent] = useState(false);
@@ -60,6 +61,7 @@ export function MainPresentation() {
         and always concerned with personal development through projects and new
         knowledge sources. I seek to solve problems through technology.
       </Text>
+      <ArrowDropDown />
     </Flex>
   );
 }

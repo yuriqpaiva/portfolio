@@ -35,6 +35,7 @@ export function About() {
       w="100%"
       display="flex"
       as={Reveal}
+      bg="green"
       delay={200}
       keyframes={revealAnimation}
       triggerOnce
