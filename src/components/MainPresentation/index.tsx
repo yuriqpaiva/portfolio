@@ -17,7 +17,7 @@ export function MainPresentation() {
       w="100%"
       visibility={showComponent ? 'visible' : 'hidden'}
       maxWidth={1160}
-      h="90vh"
+      h="85vh"
       justify="center"
       flexDir="column"
       as={motion.div}

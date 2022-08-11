@@ -91,7 +91,7 @@ export function Experience() {
         triggerOnce
         width={{ base: '100%', md: '70%' }}
       >
-        <Flex w="100%" flexDir="column" as="section" id="experience" pt={56}>
+        <Flex w="100%" flexDir="column" as="section" id="experience" pt="2rem" mt="10rem">
           <SectionTitle name="Experience" number={2} justify="flex-start" />
           <Flex flexDir={{ base: 'column', md: 'row' }}>
             <ExperienceList

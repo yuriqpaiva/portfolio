@@ -23,7 +23,7 @@ export function Contact() {
       triggerOnce
       w={{ base: '100%', md: '70%' }}
     >
-      <Flex flexDir="column" as="section" id="contact" pt={56} mb="20">
+      <Flex flexDir="column" as="section" id="contact" mt="15rem" mb="20">
         <SectionTitle name="Contact" number={4} />
         <Flex gap="10" flexDir={{ base: 'column', md: 'row' }}>
           <Flex flexDir="column" w={{ base: '100%', md: '60%' }}>

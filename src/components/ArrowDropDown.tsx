@@ -27,7 +27,7 @@ export function ArrowDropDown() {
     <Container
       display="flex"
       alignItems="center"
-      mt={20}
+      mt="5vw"
       justifyContent="center"
       transition="opacity 0.3s ease-in-out"
       opacity={hiddenIcon ? 0 : 1}
