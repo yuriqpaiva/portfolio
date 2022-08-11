@@ -5,6 +5,7 @@ import {
   ListItem,
   Text,
   UnorderedList,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { RiExternalLinkLine, RiGithubLine } from 'react-icons/ri';
 import { IconLink } from '../../utils/IconLink';
@@ -22,13 +23,41 @@ interface HighlightProjectProps {
 }
 
 export function HighlightProject({ project }: HighlightProjectProps) {
+  const isWideVersion = useBreakpointValue({ base: false, lg: true });
+
   return (
-    <Flex bg="brandBlue.800" py="8" px="12" borderRadius={8} gap="10">
-      <ProjectImage
-        href={project.deploy_url ?? project.github_url}
-        src={project.image}
-      />
-      <Flex flex={1} flexDir="column" gap="8">
+    <Flex
+      py="8"
+      px="12"
+      borderRadius={8}
+      gap="10"
+      overflow="hidden"
+      pos="relative"
+      borderWidth={2}
+      borderColor={isWideVersion ? 'transparent' : 'brandRed.500'}
+      bg={isWideVersion ? 'brandBlue.800' : 'transparent'}
+      _before={{
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        bg: 'brandBlue.700',
+        opacity: 0.05,
+        backgroundImage: project.image,
+        backgroundSize: 'cover',
+        zIndex: -1,
+        backgroundPosition: 'center',
+      }}
+    >
+      {isWideVersion && (
+        <ProjectImage
+          href={project.deploy_url ?? project.github_url}
+          src={project.image}
+        />
+      )}
+      <Flex flex={1} flexDir="column" gap="8" w="100%">
         <Box>
           <Link
             href={project.deploy_url! ?? project.github_url}
@@ -51,17 +80,18 @@ export function HighlightProject({ project }: HighlightProjectProps) {
           </Link>
         </Box>
 
-        <Text color="gray.300" fontSize="1rem" h="40%">
+        <Text color="gray.300" fontSize="1rem" h={isWideVersion ? '40%' : '100%'}>
           {project.description}
         </Text>
         <UnorderedList
           listStyleType="none"
           display="flex"
+          flexWrap="wrap"
           ml={0}
           fontFamily="Roboto Mono"
           color="gray.400"
-          gap="10"
-          h="10%"
+          gap={isWideVersion ? '10' : '4'}
+          h={isWideVersion ? '10%' : '100%'}
         >
           {project.technologies.map((technology) => (
             <ListItem key={technology}>{technology}</ListItem>

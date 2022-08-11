@@ -33,6 +33,7 @@ export function ProjectImage({ href, src }: ProjectImageProps) {
       }}
     >
       <Image
+        h="100%"
         objectFit="cover"
         src={src}
         borderRadius={8}
