@@ -1,4 +1,4 @@
-# Portfolio &middot; ![GitHub license](https://img.shields.io/github/license/yuriqpaiva/portfolio?color=red) ![Languages](https://img.shields.io/github/languages/count/yuriqpaiva/ignews?color=blueviolet) ![Github Top Language](https://img.shields.io/github/languages/top/yuriqpaiva/portfolio?color=blue)
+# Portfolio &middot;  ![Languages](https://img.shields.io/github/languages/count/yuriqpaiva/ignews?color=blueviolet) ![Github Top Language](https://img.shields.io/github/languages/top/yuriqpaiva/portfolio?color=blue) ![GitHub license](https://img.shields.io/badge/license-MIT-red)
 
 <div align="center">
   <img align="center" src="./public/app.png" />
