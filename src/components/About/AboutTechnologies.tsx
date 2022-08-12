@@ -5,10 +5,10 @@ import { TechnologyItem } from './TechnologyItem';
 
 interface AboutTechnologiesProps {
   technologies: {
-    name: string;
-    description: string;
-    image_url: string;
-  }[] | undefined;
+    image_url?: string | null | undefined;
+    name?: string | null | undefined;
+    description?: string | null | undefined;
+}[] | undefined
 }
 
 export function AboutTechnologies({ technologies }: AboutTechnologiesProps) {

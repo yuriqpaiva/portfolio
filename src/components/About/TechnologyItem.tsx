@@ -3,17 +3,19 @@ import {
 } from '@chakra-ui/react';
 
 interface TechnologyItemProps {
-  technology: {
-    name: string;
-    description: string;
-    image_url: string;
-  };
+  technology:
+    | {
+        image_url?: string | null | undefined;
+        name?: string | null | undefined;
+        description?: string | null | undefined;
+      }
+    | undefined;
 }
 
 export function TechnologyItem({ technology }: TechnologyItemProps) {
   return (
     <Tooltip
-      label={`${technology.description}`}
+      label={`${technology?.description}`}
       fontSize={{ base: '0.875rem', md: '1rem' }}
       p="4"
       bg="brandBlue.700"
@@ -28,7 +30,7 @@ export function TechnologyItem({ technology }: TechnologyItemProps) {
         mx={{ base: 'auto', md: '0' }}
         mb={6}
       >
-        <Image src={technology.image_url} alt="" w="100%" h="100%" />
+        <Image src={technology?.image_url!} alt="" w="100%" h="100%" />
         <Text
           fontFamily="Roboto Mono"
           fontWeight="medium"
@@ -36,7 +38,7 @@ export function TechnologyItem({ technology }: TechnologyItemProps) {
           color="gray.400"
           fontSize={{ base: '0.75rem', md: '0.875rem' }}
         >
-          {technology.name}
+          {technology?.name}
         </Text>
       </Flex>
     </Tooltip>

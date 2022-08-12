@@ -2,7 +2,15 @@ import { Button, Text } from '@chakra-ui/react';
 
 interface ExperienceItemProps {
   active?: boolean;
-  experience: { id: string; place: string };
+  experience: {
+    id: string;
+    place?: string | null | undefined;
+    office?: string | null | undefined;
+    duties: string[];
+    startDate?: any;
+    endDate?: any;
+    url?: string | null | undefined;
+  };
   // eslint-disable-next-line no-unused-vars
   handleExperienceChange: (value: string) => void;
 }

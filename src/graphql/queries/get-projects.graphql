@@ -1,0 +1,11 @@
+query GetProjects {
+  projects {
+    title
+    technologies
+    description
+    deploy_url
+    github_url
+    image
+    category
+  }
+}

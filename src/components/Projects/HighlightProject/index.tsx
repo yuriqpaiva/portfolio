@@ -13,12 +13,13 @@ import { ProjectImage } from './ProjectImage';
 
 interface HighlightProjectProps {
   project: {
-    title: string;
-    technologies: string[];
-    description: string;
-    deploy_url: string | null;
-    github_url: string | null;
-    image: string;
+    title?: string | null;
+    technologies: Array<string>;
+    description?: string | null;
+    deploy_url?: string | null;
+    github_url?: string | null;
+    image?: string | null;
+    category?: string | null;
   };
 }
 
@@ -45,7 +46,7 @@ export function HighlightProject({ project }: HighlightProjectProps) {
         right: 0,
         bg: 'brandBlue.700',
         opacity: 0.05,
-        backgroundImage: project.image,
+        backgroundImage: project.image!,
         backgroundSize: 'cover',
         zIndex: -1,
         backgroundPosition: 'center',
@@ -80,7 +81,11 @@ export function HighlightProject({ project }: HighlightProjectProps) {
           </Link>
         </Box>
 
-        <Text color="gray.300" fontSize="1rem" h={isWideVersion ? '40%' : '100%'}>
+        <Text
+          color="gray.300"
+          fontSize="1rem"
+          h={isWideVersion ? '40%' : '100%'}
+        >
           {project.description}
         </Text>
         <UnorderedList

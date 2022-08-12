@@ -5,41 +5,16 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { gql, useQuery } from '@apollo/client';
 import Reveal from 'react-awesome-reveal';
 import { SectionTitle } from '../utils/SectionTitle';
 import { HighlightProject } from './HighlightProject';
 import { RelevantProject } from './RelevantProject';
 import { revealAnimation } from '../../utils/animations/revealAnimation';
-
-const GET_PROJECTS = gql`
-  query GetProjects {
-    projects {
-      title
-      technologies
-      description
-      deploy_url
-      github_url
-      image
-      category
-    }
-  }
-`;
-
-interface GetProjectsResponse {
-  projects: {
-    title: string;
-    technologies: string[];
-    description: string;
-    deploy_url: string | null;
-    github_url: string | null;
-    image: string;
-    category: 'highlight' | 'relevant';
-  }[];
-}
+import { useGetProjectsQuery } from '../../graphql/generated';
 
 export function Projects() {
-  const { data } = useQuery<GetProjectsResponse>(GET_PROJECTS);
+  const { data } = useGetProjectsQuery();
+
   return (
     <Box
       w="100%"

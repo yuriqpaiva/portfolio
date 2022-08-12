@@ -1,0 +1,11 @@
+query GetExperiences {
+  experiences(orderBy: startDate_DESC) {
+    id
+    place
+    office
+    duties
+    startDate
+    endDate
+    url
+  }
+}

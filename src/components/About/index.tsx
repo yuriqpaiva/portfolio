@@ -6,33 +6,15 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { Reveal } from 'react-awesome-reveal';
-import { gql, useQuery } from '@apollo/client';
 import { AboutDescription } from './AboutDescription';
 import { AboutProfilePicture } from './AboutProfilePicture';
 import { AboutTechnologies } from './AboutTechnologies';
 import { SectionTitle } from '../utils/SectionTitle';
 import { revealAnimation } from '../../utils/animations/revealAnimation';
-
-const GET_TECHNOLOGIES = gql`
-  query GetTechnologies {
-    technologies {
-      image_url
-      name
-      description
-    }
-  }
-`;
-
-interface GetTechnologiesResponse {
-  technologies: {
-    name: string;
-    description: string;
-    image_url: string;
-  }[];
-}
+import { useGetTechnologiesQuery } from '../../graphql/generated';
 
 export function About() {
-  const { data } = useQuery<GetTechnologiesResponse>(GET_TECHNOLOGIES);
+  const { data } = useGetTechnologiesQuery();
 
   const isWideVersion = useBreakpointValue({ base: false, md: true });
 

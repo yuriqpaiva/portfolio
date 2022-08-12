@@ -1,5 +1,4 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { gql, useQuery } from '@apollo/client';
 import { useCallback, useEffect, useState } from 'react';
 import Reveal from 'react-awesome-reveal';
 import { SectionTitle } from '../utils/SectionTitle';
@@ -7,20 +6,7 @@ import { ExperienceDetail } from './ExperienceDetail';
 import { ExperienceList } from './ExperiencesList';
 import { formatDate } from '../../utils/functions/formatDate';
 import { revealAnimation } from '../../utils/animations/revealAnimation';
-
-const GET_EXPERIENCES = gql`
-  query GetExperiences {
-    experiences(orderBy: startDate_DESC) {
-      id
-      place
-      office
-      duties
-      startDate
-      endDate
-      url
-    }
-  }
-`;
+import { useGetExperiencesQuery } from '../../graphql/generated';
 
 interface ExperienceData {
   id: string;
@@ -32,12 +18,8 @@ interface ExperienceData {
   url: string;
 }
 
-interface GetExperiencesResponse {
-  experiences: ExperienceData[];
-}
-
 export function Experience() {
-  const { data } = useQuery<GetExperiencesResponse>(GET_EXPERIENCES);
+  const { data } = useGetExperiencesQuery();
 
   const [selectedExperienceId, setSelectedExperienceId] = useState(
     data?.experiences[0].id,

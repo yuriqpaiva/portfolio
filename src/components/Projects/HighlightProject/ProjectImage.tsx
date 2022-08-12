@@ -1,8 +1,8 @@
 import { Image, Link } from '@chakra-ui/react';
 
 interface ProjectImageProps {
-  href: string | null;
-  src: string;
+  href: string | null | undefined;
+  src: string | null | undefined;
 }
 
 export function ProjectImage({ href, src }: ProjectImageProps) {
@@ -35,7 +35,7 @@ export function ProjectImage({ href, src }: ProjectImageProps) {
       <Image
         h="100%"
         objectFit="cover"
-        src={src}
+        src={src || ''}
         borderRadius={8}
       />
     </Link>

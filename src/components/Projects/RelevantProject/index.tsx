@@ -11,12 +11,13 @@ import { IconLink } from '../../utils/IconLink';
 
 interface HighlightProjectProps {
   project: {
-    title: string;
-    technologies: string[];
-    description: string;
-    deploy_url: string | null;
-    github_url: string | null;
-    image: string;
+    title?: string | null;
+    technologies: Array<string>;
+    description?: string | null;
+    deploy_url?: string | null;
+    github_url?: string | null;
+    image?: string | null;
+    category?: string | null;
   };
 }
 
