@@ -8,7 +8,7 @@ export function Footer() {
     <Flex my="12" flexDir="column" align="center">
       <HStack mb="4" spacing="6">
         {socialMedias.map((item) => (
-          <Link isExternal={!item.noTargetBlank} href={item.href}>
+          <Link isExternal={!item.noTargetBlank} href={item.href} key={item.href}>
             <Icon
               as={item.icon}
               boxSize="1.5rem"
