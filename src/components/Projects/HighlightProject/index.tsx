@@ -28,6 +28,8 @@ export function HighlightProject({ project }: HighlightProjectProps) {
 
   return (
     <Flex
+      h={isWideVersion ? 360 : '100%'}
+      alignItems="center"
       py="8"
       px="12"
       borderRadius={8}
@@ -58,7 +60,7 @@ export function HighlightProject({ project }: HighlightProjectProps) {
           src={project.image}
         />
       )}
-      <Flex flex={1} flexDir="column" gap="8" w="100%">
+      <Flex flex={1} flexDir="column" gap="8" w="100%" justify="space-between" h="100%">
         <Box>
           <Link
             href={project.deploy_url! ?? project.github_url}
