@@ -44,10 +44,10 @@ export function Contact() {
               variant="none"
               borderColor="brandRed.500"
               borderWidth="1px"
-              bg="brandRed.500"
+              bg="transparent"
               mt="10"
               _hover={{
-                bg: 'transparent',
+                bg: 'brandRedOpacity.500',
               }}
               onClick={() => {
                 window.location = 'mailto:yuriqpaiva@gmail.com' as (

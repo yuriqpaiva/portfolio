@@ -1,5 +1,5 @@
 query GetProjects {
-  projects {
+  projects(first: 500) {
     title
     technologies
     description

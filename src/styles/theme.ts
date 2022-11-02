@@ -32,6 +32,9 @@ const customTheme = {
       800: '#16213E',
       700: '#0F3460',
     },
+    brandRedOpacity: {
+      500: 'rgb(233, 69, 96, 0.1)',
+    },
     brandRed: {
       500: '#E94560',
     },

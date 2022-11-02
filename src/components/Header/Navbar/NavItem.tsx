@@ -19,7 +19,7 @@ export function NavItem({ index, item, isSidebar }: NavItemProps) {
   useEffect(() => {
     setTimeout(() => {
       setShowComponent(true);
-    }, 100 * (index + 1));
+    }, 200 * (index + 1));
   }, []);
 
   async function goToReference(href: string): Promise<void> {
