@@ -4,7 +4,7 @@ export const socialMedias = [
   { icon: RiGithubFill, href: 'https://github.com/yuriqpaiva' },
   {
     icon: RiLinkedinBoxFill,
-    href: 'https://www.linkedin.com/in/yuri-queiroz-paiva-a4b7111b3/',
+    href: 'https://www.linkedin.com/in/yuri-paiva-dev/',
   },
   {
     icon: RiMailFill,
