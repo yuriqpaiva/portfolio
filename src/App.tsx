@@ -8,6 +8,8 @@ import { MainPresentation } from './components/MainPresentation';
 import { Projects } from './components/Projects';
 import { Sidebar } from './components/Header/Sidebar';
 import { SocialMediaList } from './components/SocialMediaList';
+import { TechnologiesSection } from './components/TechnologiesSection';
+import 'keen-slider/keen-slider.min.css';
 
 function App() {
   const isWideVersion = useBreakpointValue({ base: false, lg: true });
@@ -34,6 +36,7 @@ function App() {
       >
         <MainPresentation />
         <About />
+        <TechnologiesSection />
         <Experience />
         <Projects />
         <Contact />

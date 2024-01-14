@@ -13,7 +13,7 @@ export function Header() {
   const [isSettingHidden, setIsSettingHidden] = useState(false);
   const { onToggle, isOpen } = useSidebarData();
 
-  const isWideVersion = useBreakpointValue({ base: false, lg: true });
+  const isWideVersion = useBreakpointValue({ base: false, xl: true });
 
   useScrollPosition(({ currPos }) => {
     if (currPos.y <= -38) {
