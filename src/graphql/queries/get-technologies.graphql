@@ -1,5 +1,5 @@
 query GetTechnologies {
-  technologies {
+  technologies(first: 500) {
     image_url
     name
     description

@@ -26,9 +26,12 @@ export function AboutDescription() {
         Frameworks like Express and NestJS.
       </Text>
       <Text>
-        I&apos;m current working at a ticket sales start-up in Brazil where the
-        main focus is on build apps with performance, accessibility and great
-        SEO, using Agile methodology.
+        At present, I&apos;m deeply immersed in the vibrant tech landscape of a
+        Brazilian technology solution startup. Here, I&apos;ve shouldered the
+        responsibility for numerous projects, steering them through the entire
+        development lifecycle. This hands-on involvement, coupled with the
+        principles of Agile methodology, has not only enriched my skill set but
+        has also contributed significantly to our success.
       </Text>
     </Box>
   );

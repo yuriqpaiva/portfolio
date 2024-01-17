@@ -52,14 +52,14 @@ export function MainPresentation() {
         mt="8"
         color="gray.300"
       >
-        I&apos;m Passionate about
-        {' '}
         <Text as="strong" fontWeight="semibold" color="brandRed.500">
-          Software Development
-          {' '}
+          Full Stack Software Engineer
         </Text>
-        and always concerned with personal development through projects and new
-        knowledge sources. I seek to solve problems through technology.
+        {' '}
+        {' '}
+        with over 4 years of experience in JavaScript and Node.js. I help
+        companies streamline their development processes and achieve remarkable
+        results.
       </Text>
       <ArrowDropDown />
     </Flex>
