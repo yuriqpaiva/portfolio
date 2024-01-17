@@ -32,7 +32,7 @@ export function TechnologiesSection() {
     breakpoints: {
       '(max-width: 768px)': {
         slides: {
-          perView: 1,
+          perView: 2,
           spacing: 10,
         },
         mode: 'free-snap',
@@ -41,7 +41,7 @@ export function TechnologiesSection() {
       },
       '(min-width: 768px) and (max-width: 1024px)': {
         slides: {
-          perView: 3,
+          perView: 4,
           spacing: 10,
         },
         mode: 'free-snap',
@@ -97,18 +97,17 @@ export function TechnologiesSection() {
               direction="column"
               justifyContent="center"
               alignItems="center"
-              className="keen-slider__slide number-slide1"
+              className="keen-slider__slide"
               bgColor="brandBlue.800"
               borderRadius={12}
-              padding="2rem"
-              gap="6"
+              padding="1.125rem"
+              gap="4"
             >
               <Image
                 src={technology?.image_url ?? ''}
                 alt={technology?.description ?? ''}
-                width="100px"
-                height="100px"
-                // cover
+                maxWidth="50px"
+                maxHeight="50px"
                 objectFit="contain"
               />
               <Text
