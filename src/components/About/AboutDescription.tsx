@@ -17,6 +17,7 @@ export function AboutDescription() {
         {' '}
         <UnderlineLink href="https://reactjs.org/">React</UnderlineLink>
         ,
+        {' '}
         <UnderlineLink href="https://reactnative.dev/">
           React Native
         </UnderlineLink>
