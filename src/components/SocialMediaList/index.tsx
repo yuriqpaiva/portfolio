@@ -4,7 +4,7 @@ import { SocialMediaItem } from './SocialMediaItem';
 
 export function SocialMediaList() {
   return (
-    <Flex position="fixed" top="0" bottom="0" my="auto" ml="4">
+    <Flex position="fixed" top="0" bottom="0" right="0" my="auto" mr="4">
       <Flex my="auto" flexDir="column" gap="4">
         <Box bg="white" w={9} borderBottomWidth="thin" opacity={0.5} />
         {socialMedias.map((media) => (
