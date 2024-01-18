@@ -17,13 +17,14 @@ export function MainPresentation() {
       w="100%"
       visibility={showComponent ? 'visible' : 'hidden'}
       maxWidth={1160}
-      h="90vh"
+      h={{ base: '90vh', md: '85vh' }}
       justify="center"
       flexDir="column"
       as={motion.div}
       initial={{ opacity: 0, translateX: 100 }}
       animate={{ opacity: 1, translateX: 0 }}
       transition="0.5s ease-in"
+
     >
       <Text
         fontSize="1rem"
