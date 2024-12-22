@@ -54,11 +54,11 @@ export function MainPresentation() {
         color="gray.300"
       >
         <Text as="strong" fontWeight="semibold" color="brandRed.500">
-          Full Stack Software Engineer
+          Full Stack Software Developer
         </Text>
         {' '}
         {' '}
-        with over 4 years of experience in JavaScript and Node.js. I help
+        with over 5 years of experience in JavaScript and Node.js. I help
         companies streamline their development processes and achieve remarkable
         results.
       </Text>

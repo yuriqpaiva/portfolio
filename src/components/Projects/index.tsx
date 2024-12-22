@@ -40,7 +40,7 @@ export function Projects() {
         mt="1rem"
         pt="2rem"
       >
-        <SectionTitle name="Projects that I've built" number={3} />
+        <SectionTitle name="Projects that I've built" number={4} />
         <Stack spacing="12">
           {data?.projects.map((project) => {
             if (project.category === 'highlight') {

@@ -31,6 +31,7 @@ export function ExperienceItem({
       borderRadius={0}
       role="group"
       w="100%"
+      minW="auto"
       onClick={() => handleExperienceChange(experience.id)}
     >
       <Text

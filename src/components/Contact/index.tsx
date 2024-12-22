@@ -29,14 +29,11 @@ export function Contact() {
           <Flex flexDir="column" w={{ base: '100%', md: '60%' }}>
             <Box fontSize="1.125rem" color="gray.300">
               <Text>
-                I&apos;m open to make new professional connections to share or
-                receive new sources of knowledge. Also looking for new
-                opportunities to add value through technology.
+                Let’s connect! I’m always eager to build meaningful professional
+                relationships, exchange knowledge, and explore opportunities to
+                create value through technology.
               </Text>
-              <Text mt="8">
-                Please, feel free to contact me and I will try my best to help
-                you!
-              </Text>
+              <Text mt="8">I’d be happy to help or collaborate!</Text>
             </Box>
             <Button
               w="40"

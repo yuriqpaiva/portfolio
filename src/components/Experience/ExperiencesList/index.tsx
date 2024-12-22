@@ -27,7 +27,7 @@ export function ExperienceList({
       mb={{ base: '6', md: '0' }}
       mr={{ base: '0', md: '8' }}
     >
-      <Stack spacing="4" direction={{ base: 'row', md: 'column' }}>
+      <Stack spacing="5" direction={{ base: 'row', md: 'column' }}>
         {experiences.map((experience) => (
           <ExperienceItem
             handleExperienceChange={onExperienceChange}

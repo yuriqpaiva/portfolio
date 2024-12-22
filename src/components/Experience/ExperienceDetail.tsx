@@ -21,7 +21,7 @@ interface CompanyDetailProps {
 export function ExperienceDetail({ experience, isMounting }: CompanyDetailProps) {
   if (experience && !isMounting) {
     return (
-      <Box as={Reveal} keyframes={revealAnimation} triggerOnce h={496}>
+      <Box as={Reveal} keyframes={revealAnimation} triggerOnce minH={496}>
         <Flex w="80%" flexDir="column">
           <Text fontSize="1.25rem" fontWeight="semibold" color="gray.200">
             {experience.office}

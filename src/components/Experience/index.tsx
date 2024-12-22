@@ -72,6 +72,7 @@ export function Experience() {
         keyframes={revealAnimation}
         triggerOnce
         width={{ base: '100%', md: '70%' }}
+        pb="20"
       >
         <Flex w="100%" flexDir="column" as="section" id="experience" pt="2rem" mt="10rem">
           <SectionTitle name="Experience" number={3} justify="flex-start" />
