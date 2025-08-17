@@ -11,24 +11,22 @@ export function AboutDescription() {
       >
         Innovative
         {' '}
-        <strong>Full Stack Software Developer</strong>
+        <strong>Full Stack Engineer</strong>
         {' '}
         with
         {' '}
-        <strong>5+</strong>
+        <strong>5</strong>
         {' '}
         years of experience in
         {' '}
         <UnderlineLink href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript">
           JavaScript
         </UnderlineLink>
-        ,
+        {' '}
+        and
         {' '}
         <UnderlineLink href="https://nodejs.org/en">Node.js</UnderlineLink>
-        ,
-        and modern web technologies. I specialize in building high-performance
-        web and mobile applications, optimizing development processes, and
-        delivering exceptional user experiences.
+        , specializing in designing and scaling applications from concept to deployment. Proven track record in leading teams, streamlining development cycles, and implementing best practices that accelerate delivery and elevate product quality.
         {' '}
         <br />
         <br />
@@ -37,16 +35,10 @@ export function AboutDescription() {
         <br />
         <ul>
           <li>
-            Cutting project timelines by 25% through efficient end-to-end
-            development.
+            Led end-to-end architecture design for web and mobile platforms using React Native, NestJS, GraphQL, and microservices—establishing scalable foundations, improving system transparency by 30%, and cutting infrastructure costs by 10%.
           </li>
           <li>
-            Driving a 200% increase in user acquisition with impactful
-            application designs.
-          </li>
-          <li>
-            Reducing post-release issues by 30% through robust testing
-            strategies.
+            Defined and implemented engineering processes that reduced technical debt and deployment errors while enabling consistent sprint deliveries, accelerating time-to-market for critical features and strengthening cross-functional collaboration.
           </li>
         </ul>
       </Text>
